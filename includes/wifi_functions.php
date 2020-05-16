@@ -64,11 +64,11 @@ function nearbyWifiStations(&$networks, $cached = true)
     );
 
     // get the name of the AP - should be excluded von the nearby networks
-	$pars=parse_ini_file(RASPI_HOSTAPD_CONFIG,false,INI_SCANNER_RAW );
-	$ap_ssid = $pars['ssid'];
-	
-	foreach (explode("\n", $scan_results) as $network) {
-		$arrNetwork = preg_split("/[\t]+/", $network);  // split result into array
+    $pars = parse_ini_file(RASPI_HOSTAPD_CONFIG,false,INI_SCANNER_RAW );
+    $ap_ssid = $pars['ssid'];
+
+    foreach (explode("\n", $scan_results) as $network) {
+        $arrNetwork = preg_split("/[\t]+/", $network);  // split result into array
         if (!array_key_exists(4, $arrNetwork) ||
             trim($arrNetwork[4]) == $ap_ssid) continue;
 

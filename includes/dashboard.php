@@ -133,8 +133,11 @@ function DisplayDashboard(&$extraFooterScripts)
     // Display link quality as signal quality for now.
     $strLinkQuality = 0;
     if ($signalLevel > -100 && $wlanHasLink) {
-        if ($signalLevel >= -50)        $strLinkQuality = 100;
-        else                            $strLinkQuality =  2*($signalLevel + 100);
+        if ($signalLevel >= -50) {
+            $strLinkQuality = 100;
+        } else {
+            $strLinkQuality =  2*($signalLevel + 100);
+        }
     }
     $wlan0up = false;
     $classMsgDevicestatus = 'warning';
