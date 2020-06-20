@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Raspbian WiFi Configuration Portal (RaspAP)
+ * DeepCyber Starlink Portal (DSP)
  *
  * Enables use of simple web interface rather than SSH to control wifi and hostapd on the Raspberry Pi.
  * Recommended distribution is Raspbian Buster Lite. Specific instructions to install the supported software are
@@ -10,12 +10,10 @@
  * php-cgi (version 7.3.14-1 installed via apt)
  * along with their supporting packages, php7.3 will also need to be enabled.
  *
- * @author  Lawrence Yau <sirlagz@gmail.com>
- * @author  Bill Zimmerman <billzimmerman@gmail.com>
+ * @author  DeepCyber 
  * @license GNU General Public License, version 3 (GPL-3.0)
  * @version 2.4.1
- * @link    https://github.com/billz/raspap-webgui
- * @see     http://sirlagz.net/2013/02/08/raspap-webgui/
+ * @link    https://github.com/yeswici/raspap-webgui
  */
 
 require 'includes/csrf.php';
@@ -71,7 +69,7 @@ $bridgedEnabled = $arrHostapdConf['BridgedEnable'];
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title><?php echo _("RaspAP WiFi Configuration Portal"); ?></title>
+    <title><?php echo _("DSP Starlink Configuration Portal"); ?></title>
 
     <!-- Bootstrap Core CSS -->
     <link href="dist/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -112,7 +110,7 @@ $bridgedEnabled = $arrHostapdConf['BridgedEnable'];
       <ul class="navbar-nav sidebar sidebar-light d-none d-md-block accordion <?php echo (isset($toggleState)) ? $toggleState : null ; ?>" id="accordionSidebar">
         <!-- Sidebar - Brand -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php?page=wlan0_info">
-          <div class="sidebar-brand-text ml-1">RaspAP</div>
+          <div class="sidebar-brand-text ml-1">StarlinkPortal</div>
         </a>
         <!-- Divider -->
         <hr class="sidebar-divider my-0">
@@ -192,7 +190,7 @@ $bridgedEnabled = $arrHostapdConf['BridgedEnable'];
           </li>
             <?php endif; ?>
          <li class="nav-item">
-          <a class="nav-link" href="index.php?page=about"><i class="fas fa-info-circle fa-fw mr-2"></i><span class="nav-label"><?php echo _("About RaspAP"); ?></a>
+          <a class="nav-link" href="index.php?page=about"><i class="fas fa-info-circle fa-fw mr-2"></i><span class="nav-label"><?php echo _("About DSP"); ?></a>
         </li>
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">
